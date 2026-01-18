@@ -9,5 +9,8 @@ convertBtn.addEventListener("click", ()=>{
     const from=fromCurrency.value;
     const to=toCurrency.value;
 
-    console.log(amount,from,to);
+    const rate=83;
+    const convertedAmount=amount*rate;
+
+    result.textContent=`${amount} ${from} = ${convertedAmount} ${to}`;
 })
