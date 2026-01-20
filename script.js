@@ -4,6 +4,36 @@ let toCurrency=document.getElementById("tocurrency");
 let convertBtn=document.getElementById("convertbtn");
 let result=document.getElementById("result");
 
+async function loadCurrencies() {
+    try {
+        const res = await fetch("https://api.exchangerate-api.com/v4/latest/USD");
+        const data = await res.json();
+
+        const currencies = Object.keys(data.rates);
+
+        currencies.forEach(currency => {
+            const option1 = document.createElement("option");
+            option1.value = currency;
+            option1.textContent = currency;
+
+            const option2 = document.createElement("option");
+            option2.value = currency;
+            option2.textContent = currency;
+
+            fromCurrency.appendChild(option1);
+            toCurrency.appendChild(option2);
+        });
+
+        // default selection
+        fromCurrency.value = "USD";
+        toCurrency.value = "INR";
+
+    } catch (err) {
+        result.textContent = "Failed to load currencies";
+    }
+}
+
+
 convertBtn.addEventListener("click", async ()=>{
     const amount=inputAmount.value;
     const from=fromCurrency.value;
@@ -37,3 +67,5 @@ convertBtn.addEventListener("click", async ()=>{
 
     
 });
+
+loadCurrencies();
