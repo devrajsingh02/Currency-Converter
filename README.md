@@ -22,7 +22,8 @@ It fetches real-time exchange rates using an external API and converts currencie
 - **JavaScript** – Logic, DOM manipulation, API handling  
 - **ExchangeRate API** – Real-time currency data
 
-
+## Screenshot
+![Currency converter screenshot](./Screenshot.png)
 ---
 
 ## What I Learned
