@@ -10,7 +10,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(135deg, #667eea, #764ba2);;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    ;
 
 }
 
@@ -48,7 +49,7 @@ select {
     outline: none;
     border: none;
     border-radius: 5px;
-    background:rgba(0, 0, 0, 0.1) ;
+    background: rgba(0, 0, 0, 0.1);
 }
 
 .currency {
@@ -63,6 +64,13 @@ button {
     cursor: pointer;
     border-radius: 5px;
     border: none;
+    background: #667eea;
+    color: white;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    background: #5a67d8;
 }
 
 #result {
